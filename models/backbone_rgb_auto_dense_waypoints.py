@@ -485,7 +485,7 @@ class Backbone(nn.Module):
         state_embedding, attn_map = attn_layer(cortex_query[:, :5, :], cortex_key, cortex_value, need_weights=True, attn_mask=None)
         return state_embedding, attn_map
 
-    def forward(self, img, joints, sentence, phis, stage=0):
+    def forward(self, img, joints, sentence, phis=None, stage=0):
 
         # Image Pathway
         img_embed_query, img_embed_key, img_embed_value = self._img_pathway_(img)
